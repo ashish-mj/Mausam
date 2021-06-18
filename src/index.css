@@ -4,18 +4,18 @@
 }
 
 body{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.app{
-  background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('images/cold-bg.jpeg');
+.weather_app{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url('images/cold-bg.jpg');
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
 
-.app.warm{
-  background-image: url('images/warm-bg.jpg');
+.weather_app.warm{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('images/warm-bg.jpg');
   background-repeat: no-repeat;
 }
 
@@ -37,7 +37,33 @@ body{
   outline : none;
 }
 
-h2{
+.name{
   color:white;
-  padding-bottom: 10px;
+  padding-top: 30px;
+  font-size: 50px;
+  float :left;
+}
+
+.logo{
+  float: left;
+  height: 100px;
+  width: 100px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.links{
+  float:right;
+}
+
+.links li{
+  display: inline-block;
+  padding-right: 50px;
+  padding-top: 30px;
+}
+
+.links_img{
+  height: 50px;
+  width: 50px;
 }
