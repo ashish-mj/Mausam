@@ -17,14 +17,14 @@ function App() {
            <img src={logo} alt="logo" className="logo"/>
            <p className="name"><b>MAUSAM</b></p>
            <ul className="links">
-             <li><a href="https://ashishmj.herokuapp.com/"><img src={website} alt="website" className="links_img"/></a></li>
-             <li><a href="https://www.linkedin.com/in/ashish-mj/"><img src={linkdin} alt="linkdin" className="links_img"/></a></li>
-             <li><a href="https://github.com/ashish-mj"><img src={github} alt="github" className="links_img"/></a></li>
+             <li><a href="https://ashishmj.herokuapp.com/" target="_blank"><img src={website} alt="website" className="links_img"/></a></li>
+             <li><a href="https://www.linkedin.com/in/ashish-mj/" target="_blank"><img src={linkdin} alt="linkdin" className="links_img"/></a></li>
+             <li><a href="https://github.com/ashish-mj" target="_blank"><img src={github} alt="github" className="links_img"/></a></li>
            </ul>
           </div>
         <main>
            <div className="search-box">
-             <input type="text" className="search-bar" placeholder="Search"/>
+             <input type="text" className="search-bar" placeholder="Search..."/>
            </div>
         </main>
       </section>
