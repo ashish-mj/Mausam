@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './images/weather.png';
 import website from './images/website.png';
 import linkdin from './images/linkedin.png';
@@ -10,6 +10,20 @@ const api = {
 }
 
 function App() {
+  const [query,setQuery] = useState('');
+  const [weather,setWeather] = useState({});
+
+  const search = evt =>{
+    if (evt.key === "Enter"){
+      fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+      .then(res => res.json())
+      .then(result => {
+        setWeather(result);
+        setQuery('');
+        console.log(result);
+    });
+  }
+  }
 
   const dateBuilder = (d) =>{
     let months =["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -25,7 +39,10 @@ function App() {
 
   return (
     <div className="app">
-      <section className="weather_app">
+      <section className={
+        (typeof  weather.main == "undefined")
+      ? 'weather_app': (weather.main.temp > 18 )
+      ? 'weather_app warm': 'weather_app cold'}>
         <div className="nav">
            <img src={logo} alt="logo" className="logo"/>
            <p className="name"><b>MAUSAM</b></p>
@@ -37,19 +54,25 @@ function App() {
           </div>
         <main>
            <div className="search-box">
-             <input type="text" className="search-bar" placeholder="Search..."/>
+             <input type="text" className="search-bar" placeholder="Search..."
+             onChange={e => setQuery(e.target.value)}
+             value={query}
+             onKeyPress={search}
+             />
            </div>
+           {(typeof weather.main != "undefined") ? (
            <div className="box">
            <div className="location-box">
-             <div className="location">New York City</div>
+             <div className="location">{weather.name},{weather.sys.country}</div>
              <div className="date">{dateBuilder(new Date())}</div>
            </div>
 
            <div className="weather-box">
-             <div className="temp">15&#176;c</div>
-             <div className="weather">Sunny</div>
+             <div className="temp">{Math.round(weather.main.temp)}&#176;c</div>
+             <div className="weather">{weather.weather[0].main}</div>
            </div>
            </div>
+           ): ('')}
         </main>
       </section>
     </div>
