@@ -1,6 +1,6 @@
 # Mausam
 
-A web application that shows tempature and weather of a particular city.
+A web application that shows temperature and weather of a particular city.
 
 ## About this repository
 
