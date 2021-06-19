@@ -24,8 +24,8 @@ body{
 .search-box{
   width: 50%;
   margin: 0 0 75px;
-  padding-left : 35%;
-  padding-top: 150px;
+  padding-left : 36%;
+  padding-top: 100px;
 }
 
 .search-box .search-bar{
@@ -79,4 +79,45 @@ body{
 .links_img{
   height: 40px;
   width: 40px;
+}
+
+.box{
+  text-align: center;
+}
+
+.location-box .location{
+  color : #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-shadow: 3px 3px rgba(50,50,70,0.5);
+}
+
+.location-box .date{
+  color : #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-shadow: 2px 2px rgba(50,50,70,0.5);
+}
+
+.weather-box .temp{
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 102px;
+  font-weight: 900;
+  text-shadow: 2px 2px rgba(50,50,70,0.5);
+  box-shadow: 3px 6px rgba(0,0,0,0.2);
+}
+
+.weather-box .weather{
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  text-shadow: 3px 3px rgba(50,50,70,0.5);
 }
